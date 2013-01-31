@@ -1,4 +1,4 @@
 syslog2logfaces
 ===============
 
-Syslog to logFaces bridge
+Syslog daemon which reports to logFaces server (http://www.moonlit-software.com/)

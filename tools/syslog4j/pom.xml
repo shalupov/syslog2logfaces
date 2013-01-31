@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <maven-plugin-anno.version>1.4.1</maven-plugin-anno.version>
+    <maven.version>3.0.4</maven.version>
+  </properties>
+
+  <groupId>org.jetbrains</groupId>
+  <artifactId>syslog4j</artifactId>
+  <version>0.9.46</version>
+
+  <packaging>pom</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>3.4.0</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.1</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.directory.studio</groupId>
+      <artifactId>org.apache.commons.pool</artifactId>
+      <version>1.5.6</version>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.14</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <description>Syslog4j provides client and server implementations of the BSD Syslog protocol (RFC 3164) and the draft
+    "structured syslog" protocol (RFC Draft).
+  </description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>attach-artifacts</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>syslog4j-0.9.46-bin.jar</file>
+                  <type>jar</type>
+                </artifact>
+                <artifact>
+                  <file>syslog4j-0.9.46-src.jar</file>
+                  <type>jar</type>
+                  <classifier>sources</classifier>
+                </artifact>
+                <artifact>
+                  <file>syslog4j-0.9.46-doc.zip</file>
+                  <type>jar</type>
+                  <classifier>javadoc</classifier>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>jetbrains-kotlin</id>
+      <name>jetbrains-kotlin</name>
+      <url>http://repository.jetbrains.com/utils</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>jetbrains-kotlin</id>
+      <name>jetbrains-kotlin</name>
+      <url>http://repository.jetbrains.com/utils</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
